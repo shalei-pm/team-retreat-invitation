@@ -9,13 +9,19 @@ export function reduceInvitation(state, event) {
     case 'OPEN':
       return { ...state, unlocked: true, opening: true };
     case 'OPEN_ANIMATION_FINISHED':
-      return { ...state, opening: false };
+      return {
+        ...state,
+        opening: false
+      };
     case 'PAGE_CHANGED':
       return {
         ...state,
-        currentPage: event.page,
-        unlocked: event.page === 1 && !state.opening ? false : state.unlocked
+        currentPage: event.page
       };
+    case 'ENVELOPE_REACHED':
+      return state.opening
+        ? state
+        : { ...state, currentPage: 1, unlocked: false };
     default:
       return state;
   }

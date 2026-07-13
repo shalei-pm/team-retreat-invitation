@@ -111,7 +111,7 @@ button { font: inherit; }
 }
 
 .music-button span { display: block; }
-.music-button.is-playing { animation: music-spin 4s linear infinite; }
+.music-button.is-playing span { animation: music-spin 4s linear infinite; }
 .page-count { position: absolute; top: max(1.5rem, env(safe-area-inset-top)); right: 1.35rem; z-index: 5; color: white; font-size: .62rem; letter-spacing: .08rem; opacity: .8; }
 
 .day-watermark { position: absolute; top: 4rem; left: 1.1rem; z-index: 3; display: flex; align-items: flex-end; gap: .55rem; color: white; opacity: .34; font-family: Didot, "Bodoni 72", "Times New Roman", serif; }
@@ -119,10 +119,11 @@ button { font: inherit; }
 .day-watermark b { font-size: 4.2rem; line-height: .72; font-weight: 400; font-style: italic; }
 
 .location-stamp { position: absolute; top: 17%; left: 7%; z-index: 4; width: 80%; padding: .8rem 1rem; border: 0; border-left: 3px solid rgba(255, 255, 255, .88); background: rgba(31, 42, 34, .28); color: white; text-align: left; transform: rotate(-3deg); backdrop-filter: blur(4px); }
-.location-stamp small, .location-stamp strong, .location-stamp span { display: block; }
+.location-stamp > small, .location-stamp > strong, .location-stamp > span { display: block; }
 .location-stamp small { margin-bottom: .35rem; font-size: .55rem; letter-spacing: .1rem; opacity: .8; }
 .location-stamp strong { font: 600 .9rem/1.5 "Songti SC", "STSong", serif; }
-.location-stamp span { margin-top: .35rem; font-size: .62rem; line-height: 1.45; opacity: .78; }
+.location-stamp .location-address { display: flex; align-items: center; gap: .32rem; margin-top: .35rem; font-size: .62rem; line-height: 1.45; opacity: .82; }
+.location-address svg { width: .76rem; height: .76rem; flex: 0 0 auto; }
 
 .inset-photo { position: absolute; top: 4rem; right: 1.2rem; z-index: 4; width: 34%; aspect-ratio: 3 / 4; object-fit: cover; border: 3px solid rgba(247, 243, 233, .9); box-shadow: 0 .5rem 1.4rem rgba(21, 27, 22, .3); transform: rotate(2deg); }
 .room-inset { width: 39%; aspect-ratio: 4 / 3; }

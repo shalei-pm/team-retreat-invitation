@@ -10,14 +10,14 @@ export default defineConfig({
   },
   projects: [
     {
-      name: 'mobile-webkit',
+      name: 'mobile-chrome',
       testMatch: /invitation\.spec\.js/,
-      use: { ...devices['iPhone 13'] }
+      use: { ...devices['iPhone 13'], browserName: 'chromium', channel: 'chrome' }
     },
     {
       name: 'desktop-chromium',
       testMatch: /desktop\.spec\.js/,
-      use: { ...devices['Desktop Chrome'] }
+      use: { ...devices['Desktop Chrome'], channel: 'chrome' }
     }
   ],
   webServer: {

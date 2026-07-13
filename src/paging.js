@@ -22,6 +22,9 @@ export function createPagingController({ root, openButton, totalPages, onOpen })
     root.scrollTo({ top: root.clientHeight, behavior: 'smooth' });
     await new Promise((resolve) => setTimeout(resolve, 580));
     state = reduceInvitation(state, { type: 'OPEN_ANIMATION_FINISHED' });
+    if (root.scrollTop <= 1) {
+      state = reduceInvitation(state, { type: 'ENVELOPE_REACHED' });
+    }
     render();
   });
 
@@ -30,6 +33,9 @@ export function createPagingController({ root, openButton, totalPages, onOpen })
       type: 'PAGE_CHANGED',
       page: pageFromScroll(root.scrollTop, root.clientHeight, totalPages)
     });
+    if (root.scrollTop <= 1) {
+      state = reduceInvitation(state, { type: 'ENVELOPE_REACHED' });
+    }
     render();
   }, { passive: true });
 
