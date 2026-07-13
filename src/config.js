@@ -10,7 +10,7 @@ export const SITE = Object.freeze({
 });
 
 export const CRITICAL_IMAGES = Object.freeze([
-  'assets/images/road.webp',
-  'assets/images/stay-aerial.webp',
+  'assets/images/road.avif',
+  'assets/images/stay-aerial.avif',
   'assets/images/room.webp'
 ]);

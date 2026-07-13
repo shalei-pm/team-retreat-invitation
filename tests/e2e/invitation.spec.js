@@ -62,6 +62,10 @@ test('all itinerary media renders and copy stays inside each screen', async ({ p
   await expect(page.locator('[data-loading]')).toBeHidden({ timeout: 5000 });
   await page.locator('[data-open-invitation]').click();
   const app = page.locator('[data-mobile-app]');
+  await app.evaluate((element) => {
+    element.style.scrollSnapType = 'none';
+    element.style.scrollBehavior = 'auto';
+  });
 
   for (let pageNumber = 2; pageNumber <= 9; pageNumber += 1) {
     await app.evaluate((element, number) => {
