@@ -1,0 +1,23 @@
+{
+  "name": "team-retreat-invitation",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "assets:optimize": "node scripts/optimize-assets.mjs",
+    "assets:check": "node scripts/check-assets.mjs",
+    "build": "npm run assets:optimize && vite build && npm run assets:check",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test tests/unit/*.test.js",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.0",
+    "sharp": "^0.34.3",
+    "vite": "^7.0.0"
+  }
+}
