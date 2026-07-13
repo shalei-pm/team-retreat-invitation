@@ -1,0 +1,143 @@
+:root {
+  color-scheme: light;
+  --paper: #e9e3d4;
+  --paper-light: #f8f4e9;
+  --forest: #596755;
+  --ink: #44503f;
+  --cream: #f7f3e9;
+  --accent: #fff3cf;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--paper); }
+body { letter-spacing: 0; }
+button { font: inherit; }
+[hidden] { display: none !important; }
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  padding: 2rem;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.loading-road { width: min(72vw, 18rem); height: 11rem; overflow: visible; }
+.loading-road path { fill: none; stroke: #65745c; stroke-width: 2.2; stroke-linecap: round; }
+.loading-road circle { fill: #65745c; }
+.loading-title { margin: 0; font: 500 1.25rem/1.4 "Songti SC", "STSong", serif; }
+.loading-subtitle { margin: .55rem 0 1.5rem; font-size: .65rem; letter-spacing: .08rem; opacity: .65; }
+.loading-track { width: min(65vw, 15rem); height: 2px; background: rgba(70, 83, 66, .18); }
+.loading-track span { display: block; width: 0; height: 100%; background: #637159; }
+.loading-screen output { margin-top: .55rem; font: .8rem Didot, "Bodoni 72", serif; opacity: .7; }
+
+.mobile-app {
+  width: 100vw;
+  height: 100dvh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-y: contain;
+}
+
+.mobile-app::-webkit-scrollbar { display: none; }
+.mobile-app.is-locked { overflow-y: hidden; }
+
+.screen {
+  position: relative;
+  width: 100%;
+  min-height: 100dvh;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background: var(--forest);
+}
+
+.screen-media {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background: #546253 var(--placeholder) center / cover no-repeat;
+}
+
+.screen-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(20, 28, 22, .08), rgba(20, 28, 22, .06) 36%, rgba(20, 28, 22, .78));
+}
+
+.screen-media img { width: 100%; height: 100%; object-fit: cover; }
+.screen-copy { position: absolute; inset: auto 0 0; z-index: 3; padding: 2rem 1.7rem calc(3rem + env(safe-area-inset-bottom)); color: var(--cream); }
+.screen-copy > small { font-size: .58rem; letter-spacing: .12rem; opacity: .82; }
+.screen-copy h2 { margin: .65rem 0; font: 400 2rem/1.18 "Songti SC", "STSong", serif; }
+.screen-copy p { margin: 0; font-size: .78rem; line-height: 1.75; }
+.screen-copy .poem { margin: .8rem 0 1rem; font-family: "Songti SC", "STSong", serif; font-size: .82rem; line-height: 1.85; }
+
+.envelope-screen { background: var(--paper); color: var(--ink); }
+.hand-note { position: absolute; top: 8%; left: 7%; right: 5%; z-index: 2; margin: 0; font: 600 1.95rem/1.35 "Xingkai SC", "STXingkai", "HanziPen SC", "Kaiti SC", cursive; transform: rotate(-5deg); }
+.hand-curve { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; pointer-events: none; }
+.hand-curve path { fill: none; stroke: #59684f; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.envelope { position: absolute; left: 9%; right: 9%; top: 29%; height: 38%; padding: 0; border: 0; background: var(--paper-light); box-shadow: 0 1rem 2.2rem rgba(53, 62, 51, .16); cursor: pointer; }
+.envelope::before { content: ""; position: absolute; inset: 0; clip-path: polygon(0 0, 50% 58%, 100% 0); background: #ddd6c5; }
+.seal { position: absolute; left: 50%; top: 42%; display: grid; place-items: center; width: 3.9rem; height: 3.9rem; border-radius: 50%; background: #697554; color: #f5f0e4; font: .8rem Georgia, serif; transform: translate(-50%, -50%); box-shadow: 0 .45rem 1rem rgba(50, 60, 45, .24); }
+.tap-hint { position: absolute; top: 69%; left: 0; right: 0; text-align: center; font-size: .65rem; letter-spacing: .08rem; color: #65705f; }
+.recipient { position: absolute; left: 0; right: 0; bottom: 15%; margin: 0; text-align: center; font-size: .72rem; letter-spacing: .12rem; }
+
+.music-button {
+  position: absolute;
+  top: max(1.25rem, env(safe-area-inset-top));
+  left: 1.25rem;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .65);
+  border-radius: 50%;
+  background: rgba(31, 42, 34, .22);
+  color: #fff;
+}
+
+.music-button span { display: block; }
+.page-count { position: absolute; top: max(1.5rem, env(safe-area-inset-top)); right: 1.35rem; z-index: 5; color: white; font-size: .62rem; letter-spacing: .08rem; opacity: .8; }
+
+.day-watermark { position: absolute; top: 4rem; left: 1.1rem; z-index: 3; display: flex; align-items: flex-end; gap: .55rem; color: white; opacity: .34; font-family: Didot, "Bodoni 72", "Times New Roman", serif; }
+.day-watermark small { padding-bottom: .3rem; font-size: .95rem; letter-spacing: .25rem; }
+.day-watermark b { font-size: 4.2rem; line-height: .72; font-weight: 400; font-style: italic; }
+
+.location-stamp { position: absolute; top: 17%; left: 7%; z-index: 4; width: 80%; padding: .8rem 1rem; border: 0; border-left: 3px solid rgba(255, 255, 255, .88); background: rgba(31, 42, 34, .28); color: white; text-align: left; transform: rotate(-3deg); backdrop-filter: blur(4px); }
+.location-stamp small, .location-stamp strong, .location-stamp span { display: block; }
+.location-stamp small { margin-bottom: .35rem; font-size: .55rem; letter-spacing: .1rem; opacity: .8; }
+.location-stamp strong { font: 600 .9rem/1.5 "Songti SC", "STSong", serif; }
+.location-stamp span { margin-top: .35rem; font-size: .62rem; line-height: 1.45; opacity: .78; }
+
+.inset-photo { position: absolute; top: 4rem; right: 1.2rem; z-index: 4; width: 34%; aspect-ratio: 3 / 4; object-fit: cover; border: 3px solid rgba(247, 243, 233, .9); box-shadow: 0 .5rem 1.4rem rgba(21, 27, 22, .3); transform: rotate(2deg); }
+.room-inset { width: 39%; aspect-ratio: 4 / 3; }
+
+.swipe-hint { position: absolute; left: 50%; bottom: calc(.75rem + env(safe-area-inset-bottom)); z-index: 6; width: 1.1rem; height: .75rem; transform: translateX(-50%); }
+.swipe-hint::before { content: ""; position: absolute; left: .26rem; top: .22rem; width: .55rem; height: .55rem; border-top: 1.5px solid rgba(255, 255, 255, .9); border-left: 1.5px solid rgba(255, 255, 255, .9); transform: rotate(45deg); }
+
+.packing-screen { background: var(--forest); color: var(--cream); }
+.packing-copy { top: 0; display: flex; flex-direction: column; justify-content: center; }
+.packing-copy ol { width: 100%; margin: 1.15rem 0 1.4rem; padding: 0; list-style-position: inside; border-top: 1px solid rgba(255, 255, 255, .3); }
+.packing-copy li { padding: .85rem 0; border-bottom: 1px solid rgba(255, 255, 255, .3); font-size: .82rem; line-height: 1.55; }
+.packing-copy li:first-child { color: var(--accent); font-weight: 700; }
+.packing-copy .closing-line { text-align: center; font: .95rem "Songti SC", "STSong", serif; letter-spacing: .08rem; }
+
+.desktop-gate { min-height: 100vh; place-content: center; justify-items: center; gap: 1rem; padding: 2rem; background: var(--paper); color: var(--ink); text-align: center; }
+.desktop-gate:not([hidden]) { display: grid; }
+.desktop-gate p { margin: 0; font: 1.8rem "Songti SC", "STSong", serif; }
+.desktop-gate small { color: #6d756d; }
+
+@media (min-width: 700px) and (max-width: 768px) {
+  .mobile-app { width: min(430px, 100vw); margin-inline: auto; }
+}
+
+@media (min-width: 769px) { body { overflow: auto; } }

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#e9e3d4">
+  <title>去山里，过夏天</title>
+  <meta name="description" content="暂别屏幕与会议，共赴一场山野夏日之约">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="去山里，过夏天">
+  <meta property="og:description" content="暂别屏幕与会议，共赴一场山野夏日之约">
+  <meta property="og:url" content="%VITE_PUBLIC_SITE_URL%">
+  <meta property="og:image" content="%VITE_PUBLIC_SITE_URL%assets/share/share-cover.jpg">
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <div class="loading-screen" data-loading aria-live="polite">
+    <svg class="loading-road" viewBox="0 0 220 150" aria-hidden="true">
+      <path d="M18 130C72 126 42 92 102 82C162 72 105 42 196 20"></path>
+      <circle cx="18" cy="130" r="4"></circle>
+      <circle cx="196" cy="20" r="4"></circle>
+    </svg>
+    <p class="loading-title">正在把工作留在山下……</p>
+    <p class="loading-subtitle">收拾心情，准备进山</p>
+    <div class="loading-track"><span data-loading-bar></span></div>
+    <output data-loading-percent>0%</output>
+  </div>
+
+  <main class="mobile-app is-locked" data-mobile-app>
+    <audio data-background-music src="./assets/audio/beautiful-dream.mp3" loop preload="none"></audio>
+
+    <section class="screen envelope-screen" data-page="1" aria-labelledby="envelope-title">
+      <h1 id="envelope-title" class="hand-note">何其正喊你<br>放下工作，来团建啦！</h1>
+      <svg class="hand-curve" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M63 20C83 22 81 38 50 45M54 41L50 45L56 46"></path>
+      </svg>
+      <button class="envelope" data-open-invitation type="button" aria-label="启封邀请">
+        <span class="seal">启封</span>
+      </button>
+      <p class="tap-hint">轻触蜡封 · 开启邀请</p>
+      <p class="recipient">致 · 产研负责人团队</p>
+    </section>
+
+    <section class="screen photo-screen cover-screen" data-page="2" aria-labelledby="cover-title">
+      <picture class="screen-media" style="--placeholder:url('./assets/images/road-placeholder.webp')">
+        <source srcset="./assets/images/road.avif" type="image/avif">
+        <source srcset="./assets/images/road.webp" type="image/webp">
+        <img src="./assets/images/road.jpg" alt="车窗外蜿蜒进入山林的道路">
+      </picture>
+      <button class="music-button" data-music-toggle type="button" aria-label="播放背景音乐"><span>♪</span></button>
+      <span class="page-count">02 / 09</span>
+      <button class="location-stamp" data-native-navigation type="button">
+        <small>DESTINATION · 点击导航</small>
+        <strong>漫拾光卡农野奢民宿<br>(北京青龙峡神堂峪店)</strong>
+        <span>北京市怀柔区雁栖镇交界河村25号</span>
+      </button>
+      <div class="screen-copy">
+        <small>SUMMER RETREAT · 2026</small>
+        <h2 id="cover-title">去山里<br>过夏天</h2>
+        <p class="poem">暂别屏幕与会议<br>沿着山路，去风里坐一会儿<br>把这个夏天，过得慢一点</p>
+        <small>07.15 - 07.16 · 怀柔 / 密云</small>
+      </div>
+      <span class="swipe-hint" aria-hidden="true"></span>
+    </section>
+
+    <section class="screen photo-screen" data-page="3" aria-labelledby="stay-title">
+      <picture class="screen-media" style="--placeholder:url('./assets/images/stay-aerial-placeholder.webp')">
+        <source srcset="./assets/images/stay-aerial.avif" type="image/avif">
+        <source srcset="./assets/images/stay-aerial.webp" type="image/webp">
+        <img src="./assets/images/stay-aerial.jpg" alt="傍晚亮灯的民宿俯瞰">
+      </picture>
+      <img class="inset-photo room-inset" src="./assets/images/room.webp" alt="民宿客房环境">
+      <button class="music-button" data-music-toggle type="button" aria-label="播放背景音乐"><span>♪</span></button>
+      <span class="page-count">03 / 09</span>
+      <span class="day-watermark"><small>DAY</small><b>1</b></span>
+      <div class="screen-copy">
+        <small>ARRIVAL · HUAIROU</small>
+        <h2 id="stay-title">山里的<br>临时住处</h2>
+        <p>午饭后出发，抵达漫拾光卡农<br>先安顿下来，再把时间慢下来</p>
+      </div>
+      <span class="swipe-hint" aria-hidden="true"></span>
+    </section>
+
+    <section class="screen photo-screen" data-page="4" aria-labelledby="play-title">
+      <picture class="screen-media" style="--placeholder:url('./assets/images/billiards-placeholder.webp')">
+        <source srcset="./assets/images/billiards.avif" type="image/avif">
+        <source srcset="./assets/images/billiards.webp" type="image/webp">
+        <img src="./assets/images/billiards.jpg" alt="山景窗边的台球桌">
+      </picture>
+      <img class="inset-photo" src="./assets/images/mahjong.webp" alt="民宿麻将桌">
+      <button class="music-button" data-music-toggle type="button" aria-label="播放背景音乐"><span>♪</span></button>
+      <span class="page-count">04 / 09</span>
+      <span class="day-watermark"><small>DAY</small><b>1</b></span>
+      <div class="screen-copy">
+        <small>SLOW DOWN</small>
+        <h2 id="play-title">没有排期的<br>下午</h2>
+        <p>台球 · 麻将 · 游戏 · 卡拉 OK<br>各自放松，随意尽兴</p>
+      </div>
+      <span class="swipe-hint" aria-hidden="true"></span>
+    </section>
+
+    <section class="screen photo-screen" data-page="5" aria-labelledby="pool-title">
+      <picture class="screen-media" style="--placeholder:url('./assets/images/pool-placeholder.webp')">
+        <source srcset="./assets/images/pool.avif" type="image/avif">
+        <source srcset="./assets/images/pool.webp" type="image/webp">
+        <img src="./assets/images/pool.jpg" alt="阳光下的民宿泳池">
+      </picture>
+      <button class="music-button" data-music-toggle type="button" aria-label="播放背景音乐"><span>♪</span></button>
+      <span class="page-count">05 / 09</span>
+      <span class="day-watermark"><small>DAY</small><b>1</b></span>
+      <div class="screen-copy">
+        <small>POOL TIME</small>
+        <h2 id="pool-title">跳进<br>夏天里</h2>
+        <p>泳池派对 · 玩水 · 合影<br>把夏日的燥热留在水里</p>
+      </div>
+      <span class="swipe-hint" aria-hidden="true"></span>
+    </section>
+
+    <section class="screen photo-screen" data-page="6" aria-labelledby="bbq-title">
+      <picture class="screen-media" style="--placeholder:url('./assets/images/bbq-placeholder.webp')">
+        <source srcset="./assets/images/bbq.avif" type="image/avif">
+        <source srcset="./assets/images/bbq.webp" type="image/webp">
+        <img src="./assets/images/bbq.jpg" alt="铺满烤串和夜宵的餐桌">
+      </picture>
+      <button class="music-button" data-music-toggle type="button" aria-label="播放背景音乐"><span>♪</span></button>
+      <span class="page-count">06 / 09</span>
+      <span class="day-watermark"><small>DAY</small><b>1</b></span>
+      <div class="screen-copy">
+        <small>DINNER TIME</small>
+        <h2 id="bbq-title">山野<br>夜宴</h2>
+        <p>烧烤 · 鸭货 · 零食 · 冰啤酒<br>边吃边聊，慢慢入夜</p>
+      </div>
+      <span class="swipe-hint" aria-hidden="true"></span>
+    </section>
+
+    <section class="screen photo-screen" data-page="7" aria-labelledby="lake-title">
+      <picture class="screen-media" style="--placeholder:url('./assets/images/lake-placeholder.webp')">
+        <source srcset="./assets/images/lake.avif" type="image/avif">
+        <source srcset="./assets/images/lake.webp" type="image/webp">
+        <img src="./assets/images/lake.jpg" alt="日光山谷俯瞰密云水库">
+      </picture>
+      <button class="music-button" data-music-toggle type="button" aria-label="播放背景音乐"><span>♪</span></button>
+      <span class="page-count">07 / 09</span>
+      <span class="day-watermark"><small>DAY</small><b>2</b></span>
+      <div class="screen-copy">
+        <small>MIYUN RESERVOIR</small>
+        <h2 id="lake-title">去北京的海<br>看一看</h2>
+        <p>日光山谷 · 密云水库<br>看水、吹风、留下合影</p>
+      </div>
+      <span class="swipe-hint" aria-hidden="true"></span>
+    </section>
+
+    <section class="screen photo-screen" data-page="8" aria-labelledby="fish-title">
+      <picture class="screen-media" style="--placeholder:url('./assets/images/fish-placeholder.webp')">
+        <source srcset="./assets/images/fish.avif" type="image/avif">
+        <source srcset="./assets/images/fish.webp" type="image/webp">
+        <img src="./assets/images/fish.jpg" alt="水库鱼和配菜摆满餐桌">
+      </picture>
+      <button class="music-button" data-music-toggle type="button" aria-label="播放背景音乐"><span>♪</span></button>
+      <span class="page-count">08 / 09</span>
+      <span class="day-watermark"><small>DAY</small><b>2</b></span>
+      <div class="screen-copy">
+        <small>LUNCH</small>
+        <h2 id="fish-title">认真吃一顿<br>水库鱼</h2>
+        <p>旅行的最后一餐<br>吃饱喝足，再准备回城</p>
+      </div>
+      <span class="swipe-hint" aria-hidden="true"></span>
+    </section>
+
+    <section class="screen packing-screen" data-page="9" aria-labelledby="packing-title">
+      <button class="music-button" data-music-toggle type="button" aria-label="播放背景音乐"><span>♪</span></button>
+      <span class="page-count">09 / 09</span>
+      <div class="screen-copy packing-copy">
+        <small>BEFORE WE GO</small>
+        <h2 id="packing-title">出发前<br>再检查一下</h2>
+        <ol>
+          <li>泳衣！！！务必带，否则请裸身！！</li>
+          <li>防蚊液</li>
+          <li>换洗衣物</li>
+        </ol>
+        <p class="closing-line">乘兴而来 · 尽兴而归</p>
+      </div>
+    </section>
+  </main>
+
+  <aside class="desktop-gate" data-desktop-gate hidden>
+    <p>请使用手机打开</p>
+    <canvas data-qr-code aria-label="当前页面二维码"></canvas>
+    <small>去山里，过夏天 · 07.15 - 07.16</small>
+  </aside>
+
+  <noscript>去山里，过夏天。07.15 - 07.16。地址：北京市怀柔区雁栖镇交界河村25号。</noscript>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
